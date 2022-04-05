@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(37, 34, 34);
+  color: #fff;
+}
+
+button {
+  background-color: inherit;
+  color: rgb(125, 230, 212);
+  border: 1px solid rgb(8, 196, 164);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.021);
+}
+
+button:hover {
+  box-shadow: 0px 0px 15px rgb(8, 196, 164);
+  transition: 0.1s;
+}

@@ -1,5 +1,12 @@
+import Header from "./components/Layout/Header";
+import "./App.css";
+
 function App() {
-  return <div>redux cart</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;

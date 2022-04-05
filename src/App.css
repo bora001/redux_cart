@@ -22,3 +22,7 @@ button:hover {
   box-shadow: 0px 0px 15px rgb(8, 196, 164);
   transition: 0.1s;
 }
+
+img {
+  width: 100%;
+}

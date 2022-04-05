@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./ItemList.css";
 import { firebaseUrl } from "../../dev";
 import Items from "./Items";
-
+import Slider from "../UI/Slider";
+import { SwiperSlide } from "swiper/react";
 const ItemList = () => {
   const [itemData, setItemData] = useState([]);
   useEffect(() => {
@@ -17,9 +18,13 @@ const ItemList = () => {
   }, []);
   return (
     <div className="items_list">
-      {itemData.map((item) => (
-        <Items data={item} key={item.name} />
-      ))}
+      <Slider>
+        {itemData.map((item) => (
+          <SwiperSlide style={{ border: "5px solid gold" }}>
+            <Items data={item} key={item.name} />
+          </SwiperSlide>
+        ))}
+      </Slider>
     </div>
   );
 };

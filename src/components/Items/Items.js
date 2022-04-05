@@ -1,14 +1,14 @@
 import React from "react";
-import Card from "../UI/Card";
 import "./Items.css";
+
 const Items = (props) => {
   console.log(props.data);
   return (
-    <Card>
+    <div>
       <p>{props.data.name}</p>
       <img src={props.data.img} alt={props.data.name} />
       <p>{props.data.price}</p>
-    </Card>
+    </div>
   );
 };
 

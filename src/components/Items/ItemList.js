@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { firebaseUrl } from "../../dev";
 import Items from "./Items";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
-
 import "./ItemList.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
 const ItemList = (props) => {
   const [itemData, setItemData] = useState([]);
   const swiperRef = React.useRef(null);

@@ -26,3 +26,10 @@
   background-color: rgb(147, 253, 236);
   color: #000;
 }
+
+.header .btn_box {
+  display: flex;
+}
+.header .btn_box button {
+  margin-right: 20px;
+}

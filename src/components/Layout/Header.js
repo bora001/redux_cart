@@ -12,6 +12,9 @@ const Header = () => {
   const goRegister = () => {
     dispatch({ type: "Register" });
   };
+  const logout = () => {
+    dispatch({ type: "UserLogout" });
+  };
 
   return (
     <div className="header">
@@ -23,7 +26,9 @@ const Header = () => {
             <p>My Cart</p>
             <span>1</span>
           </button>
-          <button className="btn_logout">Logout</button>
+          <button className="btn_logout" onClick={logout}>
+            Logout
+          </button>
         </div>
       )}
       {!isLogin && (

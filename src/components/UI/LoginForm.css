@@ -1,0 +1,28 @@
+.form_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(128, 173, 170);
+  padding: 25px;
+  border-radius: 20px;
+}
+.form_login h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form_login .input_box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.form_login .input_box input {
+  margin-left: 10px;
+  border: none;
+}
+.form_login .btn_box button {
+  margin: 20px 5px 5px;
+}

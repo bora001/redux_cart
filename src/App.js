@@ -3,6 +3,7 @@ import ItemList from "./components/Items/ItemList";
 import { useSelector, useDispatch } from "react-redux";
 import LoginForm from "./components/UI/LoginForm";
 import RegisterForm from "./components/UI/RegisterForm";
+import Cart from "./components/Cart/Cart";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Header />
       {status === "Login" && <LoginForm modalClose={modalClose} />}
       {status === "Register" && <RegisterForm modalClose={modalClose} />}
+      {status === "Cart" && <Cart modalClose={modalClose} />}
       <ItemList />
     </div>
   );

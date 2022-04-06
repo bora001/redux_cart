@@ -16,13 +16,17 @@ const Header = () => {
     dispatch({ type: "UserLogout" });
   };
 
+  const goCart = () => {
+    dispatch({ type: "Cart" });
+  };
+
   return (
     <div className="header">
       <h1>ReduxCart</h1>
 
       {isLogin && (
         <div className="btn_box">
-          <button className="btn_cart">
+          <button className="btn_cart" onClick={goCart}>
             <p>My Cart</p>
             <span>1</span>
           </button>

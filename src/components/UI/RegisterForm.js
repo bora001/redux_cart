@@ -6,7 +6,7 @@ import "./RegisterForm.css";
 
 const RegisterForm = (props) => {
   const [errMsg, setErrMsg] = useState("");
-  const inputBox = document.querySelectorAll(".input_box input");
+  const inputBox = document.querySelectorAll(".form_register .input_box input");
   const ref = useRef();
   let data = {};
 
@@ -14,7 +14,7 @@ const RegisterForm = (props) => {
     setErrMsg("");
   };
 
-  const submitForm = (e) => {
+  const register = (e) => {
     e.preventDefault();
 
     inputBox.forEach((input) => {
@@ -48,7 +48,7 @@ const RegisterForm = (props) => {
 
   return (
     <Modal>
-      <form className="form_register" onSubmit={submitForm} ref={ref}>
+      <form className="form_register" onSubmit={register} ref={ref}>
         <h2>Register</h2>
         <div className="input_box">
           <label htmlFor="email">Email</label>

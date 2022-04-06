@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { firebaseUrl } from "../../dev";
+import { firebaseKey } from "../../dev";
 import Items from "./Items";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -13,7 +13,7 @@ const ItemList = (props) => {
   const swiperRef = React.useRef(null);
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch(firebaseUrl + `Items.json`);
+      const res = await fetch(firebaseKey.firebaseUrl + `Items.json`);
       const data = await res.json();
       setItemData(Object.values(data));
     };

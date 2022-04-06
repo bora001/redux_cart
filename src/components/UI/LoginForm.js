@@ -8,8 +8,8 @@ const LoginForm = (props) => {
       <form className="form_login">
         <h2>Login</h2>
         <div className="input_box">
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" name="username" />
+          <label htmlFor="email">Email</label>
+          <input type="text" id="email" name="email" />
         </div>
         <div className="input_box">
           <label htmlFor="password">Password</label>

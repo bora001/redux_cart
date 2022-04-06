@@ -13,12 +13,11 @@ const userReducer = (state = initialState, action) => {
     return { ...state, status: null };
   }
 
+  if (action.type === "UserLogin") {
+    return { ...state, isLogin: true };
+  }
   return { ...state, status: null };
 };
-
-// const userSubscriber = (userSubscriber) => {
-//   const recentState = store.getState();
-// };
 
 const store = redux.createStore(userReducer);
 export default store;

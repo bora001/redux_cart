@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase-config";
+import { useDispatch } from "react-redux";
+
 import "./LoginForm.css";
 
 const LoginForm = (props) => {
   const [errMsg, setErrMsg] = useState("");
   const inputBox = document.querySelectorAll(".form_login .input_box input");
+  const dispatch = useDispatch();
   let data = {};
 
   const typing = () => {
@@ -33,6 +36,7 @@ const LoginForm = (props) => {
 
       if (user) {
         props.modalClose();
+        dispatch({ type: "UserLogin" });
       }
     } catch (err) {
       setErrMsg(err.message.split(":"));

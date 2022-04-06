@@ -8,7 +8,6 @@ import "./App.css";
 function App() {
   const dispatch = useDispatch();
   const modalClose = () => dispatch({ type: "modalClose" });
-  // const isLogin = useSelector((state) => state.isLogin);
   const status = useSelector((state) => state.status);
   console.log(status);
   return (

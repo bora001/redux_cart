@@ -12,6 +12,7 @@ const userReducer = (state = initialState, action) => {
   if (action.type === "Logout") {
     return { ...state, status: null };
   }
+
   return { ...state, status: null };
 };
 

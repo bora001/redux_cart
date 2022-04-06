@@ -1,7 +1,13 @@
 import React from "react";
+import Modal from "./Modal";
 
-const RegisterForm = () => {
-  return <div>RegisterForm</div>;
+const RegisterForm = (props) => {
+  return (
+    <Modal>
+      RegisterForm
+      <button onClick={props.modalClose}>Close</button>
+    </Modal>
+  );
 };
 
 export default RegisterForm;

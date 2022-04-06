@@ -1,7 +1,13 @@
 import React from "react";
+import Modal from "./Modal";
 
-const LoginForm = () => {
-  return <div>LoginForm</div>;
+const LoginForm = (props) => {
+  return (
+    <Modal>
+      LoginForm;
+      <button onClick={props.modalClose}>Close</button>
+    </Modal>
+  );
 };
 
 export default LoginForm;

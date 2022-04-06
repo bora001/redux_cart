@@ -24,5 +24,13 @@
   border: none;
 }
 .form_register .btn_box button {
-  margin: 20px 5px 5px;
+  margin: 20px 5px;
+}
+.form_register .err_txt {
+  color: #fff;
+  background-color: rgb(230, 75, 4);
+  padding: 5px 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  max-width: 200px;
 }

@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
-import "./ItemList.css";
+import React, { useState, useEffect, useRef } from "react";
 import { firebaseUrl } from "../../dev";
 import Items from "./Items";
-import Slider from "../UI/Slider";
-import { SwiperSlide } from "swiper/react";
-const ItemList = () => {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+
+import "./ItemList.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+const ItemList = (props) => {
   const [itemData, setItemData] = useState([]);
+  const swiperRef = React.useRef(null);
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(firebaseUrl + `Items.json`);
@@ -16,15 +21,30 @@ const ItemList = () => {
       console.log(err);
     });
   }, []);
+
   return (
     <div className="items_list">
-      <Slider>
+      <Swiper
+        ref={swiperRef}
+        slidesPerView={3}
+        loop={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
         {itemData.map((item) => (
-          <SwiperSlide style={{ border: "5px solid gold" }}>
-            <Items data={item} key={item.name} />
+          <SwiperSlide key={item.name}>
+            <Items data={item} />
           </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
+      <div
+        className="swiper-button-prev"
+        onClick={() => swiperRef.current.swiper.slidePrev()}
+      ></div>
+      <div
+        className="swiper-button-next"
+        onClick={() => swiperRef.current.swiper.slideNext()}
+      ></div>
     </div>
   );
 };

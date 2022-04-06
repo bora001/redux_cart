@@ -9,17 +9,16 @@ body {
 }
 
 button {
-  background-color: inherit;
-  color: rgb(125, 230, 212);
-  border: 1px solid rgb(8, 196, 164);
+  background-color: rgb(8, 141, 119);
+  border: none;
+  color: #fff;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.021);
 }
 
 button:hover {
-  box-shadow: 0px 0px 15px rgb(8, 196, 164);
+  box-shadow: 0px 0px 10px rgb(8, 196, 164);
   transition: 0.1s;
 }
 

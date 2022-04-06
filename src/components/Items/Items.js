@@ -2,12 +2,16 @@ import React from "react";
 import "./Items.css";
 
 const Items = (props) => {
-  console.log(props.data);
   return (
-    <div>
-      <p>{props.data.name}</p>
+    <div className="items">
       <img src={props.data.img} alt={props.data.name} />
-      <p>{props.data.price}</p>
+      <div className="txt_box">
+        <div className="item_desc">
+          <h3>{props.data.name}</h3>
+          <p>$ {props.data.price}</p>
+        </div>
+        <button className="btn_add">Add to Cart</button>
+      </div>
     </div>
   );
 };

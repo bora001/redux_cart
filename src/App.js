@@ -1,14 +1,12 @@
 import Header from "./components/Layout/Header";
-import "./App.css";
 import ItemList from "./components/Items/ItemList";
-import Slider from "./components/UI/Slider";
+import "./App.css";
 
 function App() {
   return (
     <div>
       <Header />
       <ItemList />
-      <Slider />
     </div>
   );
 }

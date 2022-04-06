@@ -1,4 +1,24 @@
 .items_list {
-  border: 2px solid blue;
-  /* width: 300px; */
+  position: relative;
+  margin: 0 auto;
+  padding: 50px;
+  width: 80%;
+}
+
+.swiper {
+  width: 95%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  background: url(https://cdn.pixabay.com/photo/2021/10/09/12/45/play-button-6694069_960_720.png)
+    no-repeat;
+  background-size: contain;
+  color: transparent !important;
+}
+
+.swiper-button-prev {
+  transform: rotate(180deg);
 }

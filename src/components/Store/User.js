@@ -1,6 +1,6 @@
-const redux = require("redux");
 const initialState = { isLogin: false, status: null };
 const userReducer = (state = initialState, action) => {
+  console.log(state);
   if (action.type === "Login") {
     return { ...state, status: "Login" };
   }
@@ -22,5 +22,6 @@ const userReducer = (state = initialState, action) => {
   return { ...state, status: null };
 };
 
-const store = redux.createStore(userReducer);
-export default store;
+export default userReducer;
+// const store = redux.createStore(userReducer);
+// export default store;

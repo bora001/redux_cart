@@ -4,7 +4,7 @@ import "./Header.css";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const isLogin = useSelector((state) => state.isLogin);
+  const isLogin = useSelector((state) => state.userReducer.isLogin);
 
   const goLogin = () => {
     dispatch({ type: "Login" });

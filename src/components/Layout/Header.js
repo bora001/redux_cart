@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const [spanStyle, setSpanStyle] = useState("");
   const isLogin = useSelector((state) => state.userReducer.isLogin);
   const cartItems = useSelector((state) => state.cartReducer.items.length);
+  useEffect(() => {
+    console.log("test1");
+    setSpanStyle("");
+    return () => {
+      setTimeout(() => {
+        console.log("test2");
+        setSpanStyle("into_cart");
+      }, 50);
+    };
+  }, [cartItems]);
 
   const goLogin = () => {
     dispatch({ type: "Login" });
@@ -29,7 +40,7 @@ const Header = () => {
         <div className="btn_box">
           <button className="btn_cart" onClick={goCart}>
             <p>My Cart</p>
-            <span>{cartItems}</span>
+            <span className={spanStyle}>{cartItems}</span>
           </button>
           <button className="btn_logout" onClick={logout}>
             Logout

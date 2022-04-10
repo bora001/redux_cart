@@ -4,10 +4,9 @@ import "./Items.css";
 
 const Items = (props) => {
   const dispatch = useDispatch();
-  const isLogin = useSelector((state) => state.userReducer);
+  const isLogin = useSelector((state) => state.userReducer.isLogin);
   const addCart = (props) => {
-    dispatch({ type: "AddCart", props });
-    // isLogin ? dispatch({ type: "AddCart", props }) : alert("please login");
+    isLogin ? dispatch({ type: "AddCart", props }) : alert("please login");
   };
 
   return (

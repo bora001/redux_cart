@@ -33,3 +33,21 @@
 .header .btn_box button {
   margin-right: 20px;
 }
+.header .btn_box .btn_cart span {
+  transform: scale(1);
+}
+
+.header .btn_box .btn_cart span.into_cart {
+  animation: bump 0.8s;
+}
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

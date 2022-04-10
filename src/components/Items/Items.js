@@ -1,9 +1,13 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./Items.css";
 
 const Items = (props) => {
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.userReducer);
   const addCart = (props) => {
-    console.log("add", props);
+    dispatch({ type: "AddCart", props });
+    // isLogin ? dispatch({ type: "AddCart", props }) : alert("please login");
   };
 
   return (

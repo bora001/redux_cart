@@ -5,6 +5,7 @@ import "./Header.css";
 const Header = () => {
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.userReducer.isLogin);
+  const cartItems = useSelector((state) => state.cartReducer.items.length);
 
   const goLogin = () => {
     dispatch({ type: "Login" });
@@ -28,7 +29,7 @@ const Header = () => {
         <div className="btn_box">
           <button className="btn_cart" onClick={goCart}>
             <p>My Cart</p>
-            <span>1</span>
+            <span>{cartItems}</span>
           </button>
           <button className="btn_logout" onClick={logout}>
             Logout

@@ -1,6 +1,5 @@
 const initialState = { isLogin: false, status: null };
 const userReducer = (state = initialState, action) => {
-  console.log(state);
   if (action.type === "Login") {
     return { ...state, status: "Login" };
   }
@@ -19,9 +18,10 @@ const userReducer = (state = initialState, action) => {
   if (action.type === "UserLogout") {
     return { ...state, isLogin: false };
   }
-  return { ...state, status: null };
+  if (action.type === "ModalClose") {
+    return { ...state, status: null };
+  }
+  return { ...state, status: state.status };
 };
 
 export default userReducer;
-// const store = redux.createStore(userReducer);
-// export default store;

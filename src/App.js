@@ -8,7 +8,7 @@ import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-  const modalClose = () => dispatch({ type: "modalClose" });
+  const modalClose = () => dispatch({ type: "ModalClose" });
   const status = useSelector((state) => state.userReducer.status);
   return (
     <div>

@@ -1,13 +1,19 @@
 .cart_item {
-  border: 2px solid red;
+  border: 2px solid gold;
+  width: 400px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .cart_item .img_box {
-  width: 150px;
+  flex: 1;
 }
 .cart_item .item_info {
-  padding: 30px;
+  border: 2px solid red;
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+  padding: 10px;
 }
 .cart_item .item_info .txt_box {
   margin-bottom: 10px;

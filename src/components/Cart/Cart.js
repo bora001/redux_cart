@@ -5,7 +5,7 @@ import CartItem from "./CartItem";
 import "./Cart.css";
 
 const Cart = (props) => {
-  const state = useSelector((state) => state.cartReducer);
+  const state = useSelector((state) => state.cart);
 
   return (
     <Modal>
@@ -23,7 +23,7 @@ const Cart = (props) => {
             </div>
           </>
         ) : (
-          <p>Your cart is empty</p>
+          <p className="txt_empty">Your cart is empty</p>
         )}
         <div className="btn_box">
           {state.items.length > 0 && <button>Checkout</button>}

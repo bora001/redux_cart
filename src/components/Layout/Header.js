@@ -1,35 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
+import { userAction } from "../Store/user-slice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const [spanStyle, setSpanStyle] = useState("");
-  const isLogin = useSelector((state) => state.userReducer.isLogin);
-  const cartItems = useSelector((state) => state.cartReducer.items.length);
+  const isLogin = useSelector((state) => state.user.isLogin);
+  const cartItems = useSelector((state) => state.cart.items.length);
   useEffect(() => {
-    console.log("test1");
     setSpanStyle("");
     return () => {
       setTimeout(() => {
-        console.log("test2");
         setSpanStyle("into_cart");
       }, 50);
     };
   }, [cartItems]);
 
   const goLogin = () => {
-    dispatch({ type: "Login" });
+    dispatch(userAction.login());
   };
   const goRegister = () => {
-    dispatch({ type: "Register" });
+    dispatch(userAction.register());
   };
   const logout = () => {
-    dispatch({ type: "UserLogout" });
+    dispatch(userAction.userLogout());
   };
-
   const goCart = () => {
-    dispatch({ type: "Cart" });
+    dispatch(userAction.cart());
   };
 
   return (

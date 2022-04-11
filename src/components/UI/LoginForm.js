@@ -3,6 +3,7 @@ import Modal from "./Modal";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { useDispatch } from "react-redux";
+import { userAction } from "../Store/user-slice";
 import "./LoginForm.css";
 
 const LoginForm = (props) => {
@@ -13,8 +14,8 @@ const LoginForm = (props) => {
   const ref = useRef();
 
   const getData = (e) => {
-    e.target.name == "email" && setEmail(e.target.value);
-    e.target.name == "password" && setPassword(e.target.value);
+    e.target.name === "email" && setEmail(e.target.value);
+    e.target.name === "password" && setPassword(e.target.value);
   };
 
   const login = async (e) => {
@@ -24,7 +25,7 @@ const LoginForm = (props) => {
 
       if (user) {
         props.modalClose();
-        dispatch({ type: "UserLogin" });
+        dispatch(userAction.userLogin());
       }
     } catch (err) {
       ref.current.reset();

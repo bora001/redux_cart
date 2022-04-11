@@ -4,21 +4,21 @@
 }
 
 body {
-  background-color: rgb(37, 34, 34);
-  color: #fff;
+  background-color: rgb(235, 247, 244);
 }
 
 button {
   background-color: rgb(8, 141, 119);
   border: none;
   color: #fff;
-  padding: 7px 15px;
+  padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 button:hover {
-  box-shadow: 0px 0px 10px rgb(8, 196, 164);
+  box-shadow: 2px 3px 10px rgba(8, 196, 165, 0.575);
   transition: 0.1s;
 }
 

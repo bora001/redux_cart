@@ -32,6 +32,7 @@
 }
 .header .btn_box button {
   margin-right: 20px;
+  height: 40px;
 }
 .header .btn_box .btn_cart span {
   transform: scale(1);

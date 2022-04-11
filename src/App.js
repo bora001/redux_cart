@@ -5,11 +5,11 @@ import LoginForm from "./components/UI/LoginForm";
 import RegisterForm from "./components/UI/RegisterForm";
 import Cart from "./components/Cart/Cart";
 import "./App.css";
-
+import { userAction } from "./components/Store/user-slice";
 function App() {
   const dispatch = useDispatch();
-  const modalClose = () => dispatch({ type: "ModalClose" });
-  const status = useSelector((state) => state.userReducer.status);
+  const modalClose = () => dispatch(userAction.modalClose());
+  const status = useSelector((state) => state.user.status);
   return (
     <div>
       <Header />

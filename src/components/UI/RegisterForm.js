@@ -12,9 +12,9 @@ const RegisterForm = (props) => {
   const ref = useRef();
 
   const getData = (e) => {
-    e.target.name == "email" && setEmail(e.target.value);
-    e.target.name == "password" && setPassword(e.target.value);
-    e.target.name == "pwdCheck" && setPwdCheck(e.target.value);
+    e.target.name === "email" && setEmail(e.target.value);
+    e.target.name === "password" && setPassword(e.target.value);
+    e.target.name === "pwdCheck" && setPwdCheck(e.target.value);
   };
 
   const focusOn = () => {
@@ -35,7 +35,6 @@ const RegisterForm = (props) => {
       if (user) {
         props.modalClose();
       }
-      console.log(user, "user");
     } catch (err) {
       ref.current.reset();
       setErrMsg(err.message.split(":")[1]);

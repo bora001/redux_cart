@@ -7,6 +7,7 @@ import "./Items.css";
 const Items = (props) => {
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.user.isLogin);
+
   const addCart = (props) => {
     isLogin
       ? dispatch(cartAction.addCart(props))

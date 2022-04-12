@@ -5,7 +5,9 @@ import { auth } from "../../firebase-config";
 import { useDispatch } from "react-redux";
 import { userAction } from "../Store/user-slice";
 import { cartAction } from "../Store/cart-slice";
+import { getAuth } from "firebase/auth";
 import "./LoginForm.css";
+const authInfo = getAuth();
 
 const LoginForm = (props) => {
   const [errMsg, setErrMsg] = useState("");
@@ -13,7 +15,6 @@ const LoginForm = (props) => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const ref = useRef();
-
   const getData = (e) => {
     e.target.name === "email" && setEmail(e.target.value);
     e.target.name === "password" && setPassword(e.target.value);
@@ -25,9 +26,10 @@ const LoginForm = (props) => {
       const user = await signInWithEmailAndPassword(auth, email, password);
 
       if (user) {
+        const userUid = authInfo.currentUser.uid;
         props.modalClose();
         dispatch(userAction.userLogin());
-        dispatch(cartAction.setUser(email));
+        dispatch(cartAction.setUser(userUid));
       }
     } catch (err) {
       ref.current.reset();

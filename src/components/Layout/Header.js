@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
 import { userAction } from "../Store/user-slice";
+import { cartAction } from "../Store/cart-slice";
+import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, signOut } from "firebase/auth";
 
 const Header = () => {
   const dispatch = useDispatch();
   const [spanStyle, setSpanStyle] = useState("");
   const isLogin = useSelector((state) => state.user.isLogin);
-  const cartItems = useSelector((state) => state.cart.items.length);
+  const cartInfo = useSelector((state) => state.cart);
+  const auth = getAuth();
   useEffect(() => {
     setSpanStyle("");
     return () => {
@@ -15,7 +19,13 @@ const Header = () => {
         setSpanStyle("into_cart");
       }, 50);
     };
-  }, [cartItems]);
+  }, [cartInfo.items.length]);
+
+  useEffect(() => {
+    const db = getDatabase();
+    console.log(cartInfo);
+    set(ref(db, "Cart/" + cartInfo.userUid), cartInfo);
+  }, [cartInfo.items]);
 
   const goLogin = () => {
     dispatch(userAction.login());
@@ -25,6 +35,9 @@ const Header = () => {
   };
   const logout = () => {
     dispatch(userAction.userLogout());
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {});
   };
   const goCart = () => {
     dispatch(userAction.cart());
@@ -38,7 +51,7 @@ const Header = () => {
         <div className="btn_box">
           <button className="btn_cart" onClick={goCart}>
             <p>My Cart</p>
-            <span className={spanStyle}>{cartItems}</span>
+            <span className={spanStyle}>{cartInfo.items.length}</span>
           </button>
           <button className="btn_logout" onClick={logout}>
             Logout

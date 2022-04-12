@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  userEmail: null,
+  userUid: null,
   items: [],
   total: 0,
 };
@@ -49,7 +49,7 @@ const cartSlice = createSlice({
       }
     },
     setUser(state, action) {
-      state.userEmail = action.payload;
+      state.userUid = action.payload;
     },
   },
 });

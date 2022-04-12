@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Modal from "../UI/Modal";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import "./Cart.css";
 

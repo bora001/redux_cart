@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { useDispatch } from "react-redux";
 import { userAction } from "../Store/user-slice";
+import { cartAction } from "../Store/cart-slice";
 import "./LoginForm.css";
 
 const LoginForm = (props) => {
@@ -26,6 +27,7 @@ const LoginForm = (props) => {
       if (user) {
         props.modalClose();
         dispatch(userAction.userLogin());
+        dispatch(cartAction.setUser(email));
       }
     } catch (err) {
       ref.current.reset();

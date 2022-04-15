@@ -10,6 +10,7 @@ function App() {
   const dispatch = useDispatch();
   const modalClose = () => dispatch(userAction.modalClose());
   const status = useSelector((state) => state.user.status);
+
   return (
     <div>
       <Header />

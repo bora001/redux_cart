@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { userAction } from "../Store/user-slice";
 import { cartAction } from "../Store/cart-slice";
 import { getAuth } from "firebase/auth";
+// import { getDatabase, child, get } from "firebase/database";
+
 import "./LoginForm.css";
 const authInfo = getAuth();
 

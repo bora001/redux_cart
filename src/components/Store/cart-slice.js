@@ -51,6 +51,10 @@ const cartSlice = createSlice({
     setUser(state, action) {
       state.userUid = action.payload;
     },
+    setCart(state, action) {
+      state.items = action.payload.items ? action.payload.items : [];
+      state.total = action.payload.total ? action.payload.total : 0;
+    },
   },
 });
 export const cartAction = cartSlice.actions;

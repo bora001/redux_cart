@@ -5,6 +5,7 @@ import { userAction } from "../Store/user-slice";
 import { cartAction } from "../Store/cart-slice";
 import { getDatabase, ref, set, child, get } from "firebase/database";
 import { getAuth, signOut } from "firebase/auth";
+import NavMenu from "./NavMenu";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -62,8 +63,10 @@ const Header = () => {
 
   return (
     <div className="header">
-      <h1>ReduxCart</h1>
-
+      <h1>
+        <a href="/">ReduxCart</a>
+      </h1>
+      <NavMenu />
       {isLogin && (
         <div className="btn_box">
           <button className="btn_cart" onClick={goCart}>

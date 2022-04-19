@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: rgb(235, 247, 244);
+  background-color: rgb(244, 250, 248);
 }
 
 button {
@@ -24,4 +24,9 @@ button:hover {
 
 img {
   width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

@@ -1,12 +1,26 @@
 .page_box {
+  position: relative;
   display: flex;
-  width: 90%;
+  flex-direction: column;
+  width: 1700px;
   margin: 50px auto;
 }
+.page_box .filter_box {
+  display: flex;
+  margin-right: 35px;
+  justify-content: flex-end;
+}
+.page_box .filter_box select {
+  padding: 5px;
+  border: 2px solid rgba(8, 196, 165);
+}
+.page_box .item_box {
+  display: flex;
+}
+
 .page_box .items {
   flex: 1;
 }
-
 .page_box .items .img_box {
   display: flex;
   height: 250px;

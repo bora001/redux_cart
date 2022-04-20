@@ -5,7 +5,7 @@ const navMenu = () => {
   return (
     <div className="nav_menu">
       <NavLink
-        to="/product/watch"
+        to="/product/watches"
         className={({ isActive }) => (isActive ? "active" : "inactive")}
       >
         Watches
@@ -29,7 +29,7 @@ const navMenu = () => {
         Shoes
       </NavLink>
       <NavLink
-        to="/product/Bags"
+        to="/product/bags"
         className={({ isActive }) => (isActive ? "active" : "inactive")}
       >
         Bags

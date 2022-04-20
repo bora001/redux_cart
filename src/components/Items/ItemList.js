@@ -7,19 +7,23 @@ import "./ItemList.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import axios from "axios";
 const ItemList = (props) => {
   const [itemData, setItemData] = useState([]);
   const swiperRef = React.useRef(null);
   useEffect(() => {
-    const getData = async () => {
-      const res = await fetch(firebaseKey.firebaseUrl + `Items.json`);
-      const data = await res.json();
-      setItemData(Object.values(data));
-    };
-    getData().catch((err) => {
-      console.log(err);
-    });
+    axios
+      .get(firebaseKey.firebaseUrl + `Item/best.json`)
+      .then((data) => setItemData(Object.values(data.data)));
+
+    // const getData = async () => {
+    //   const res = await fetch(firebaseKey.firebaseUrl + `Items.json`);
+    //   const data = await res.json();
+    //   setItemData(Object.values(data));
+    // };
+    // getData().catch((err) => {
+    //   console.log(err);
+    // });
   }, []);
 
   return (

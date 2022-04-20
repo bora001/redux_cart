@@ -37,7 +37,7 @@ const Header = () => {
         setSpanStyle("into_cart");
       }, 50);
     };
-  }, [cartInfo.items.length]);
+  }, [cartInfo.total]);
 
   useEffect(() => {
     const db = getDatabase();

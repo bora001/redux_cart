@@ -1,0 +1,13 @@
+.page_box {
+  display: flex;
+  width: 90%;
+  margin: 50px auto;
+}
+.page_box .items {
+  flex: 1;
+}
+
+.page_box .items .img_box {
+  display: flex;
+  height: 250px;
+}

@@ -3,6 +3,7 @@ import Modal from "../UI/Modal";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import "./Cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = (props) => {
   const state = useSelector((state) => state.cart);
@@ -26,7 +27,12 @@ const Cart = (props) => {
           <p className="txt_empty">Your cart is empty</p>
         )}
         <div className="btn_box">
-          {state.items.length > 0 && <button>Checkout</button>}
+          {state.items.length > 0 && (
+            <Link to="/order" onClick={props.modalClose}>
+              <button>Checkout</button>
+            </Link>
+          )}
+
           <button onClick={props.modalClose}>Close</button>
         </div>
       </div>

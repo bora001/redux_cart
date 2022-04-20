@@ -1,0 +1,86 @@
+.order_page {
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+}
+.order_page .order_info {
+  flex: 2;
+  padding: 10px;
+}
+
+.order_page .order_info .item_title {
+  display: flex;
+  padding: 5px 0;
+  height: 50px;
+  background-color: rgba(8, 196, 165, 0.397);
+  align-items: center;
+}
+.order_page .order_info .item_title h3 {
+  text-align: right;
+  flex: 1;
+}
+.order_page .order_info .item_title .txt_box {
+  display: flex;
+  flex: 3;
+  padding: 0 30px;
+}
+.order_page .order_info .item_title .txt_box p {
+  text-align: center;
+  flex: 1;
+}
+.order_page .order_info .item_box .item_detail {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  /* padding: 5px; */
+}
+
+.order_page .order_info .item_box .item_detail .img_box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  overflow: hidden;
+}
+
+.order_page .order_info .item_box .item_detail .txt_box {
+  display: flex;
+  flex: 3;
+  padding: 0 30px;
+}
+.order_page .order_info .item_box .item_detail .txt_box p {
+  flex: 1;
+  text-align: center;
+}
+
+.order_page .order_form {
+  flex: 1;
+}
+
+.order_page .order_form {
+  padding: 50px;
+}
+
+.order_page .order_form form .input_box {
+  display: flex;
+  height: 30px;
+  margin: 10px 0;
+}
+.order_page .order_form form .input_box p {
+  flex: 1;
+  text-indent: 20px;
+}
+.order_page .order_form form .input_box input {
+  text-indent: 10px;
+  flex: 1;
+}
+.order_page .order_form form .total_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: rgba(8, 196, 165, 0.397);
+  margin: 40px 0 10px;
+}
+.order_page .order_form form button {
+  float: right;
+}

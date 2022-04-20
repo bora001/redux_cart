@@ -69,6 +69,7 @@ const Header = () => {
       <NavMenu />
       {isLogin && (
         <div className="btn_box">
+          <button>My Order</button>
           <button className="btn_cart" onClick={goCart}>
             <p>My Cart</p>
             <span className={spanStyle}>

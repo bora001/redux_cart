@@ -8,6 +8,8 @@ import Cart from "./components/Cart/Cart";
 import "./App.css";
 import { userAction } from "./components/Store/user-slice";
 import Pages from "./Pages/Pages";
+import OrderPage from "./Pages/OrderPage";
+import CompletePage from "./Pages/CompletePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +25,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ItemList />} exact />
         <Route path="/product/:item" element={<Pages />} exact />
+        <Route path="/order" element={<OrderPage />} exact />
+        <Route path="/complete_order" element={<CompletePage />} exact />
         <Route></Route>
       </Routes>
     </BrowserRouter>

@@ -5,6 +5,7 @@
   width: 1700px;
   margin: 50px auto;
 }
+
 .page_box .filter_box {
   display: flex;
   margin-right: 35px;
@@ -12,6 +13,7 @@
 }
 .page_box .filter_box select {
   padding: 5px;
+  font-size: 16px;
   border: 2px solid rgba(8, 196, 165);
 }
 .page_box .item_box {
@@ -24,4 +26,44 @@
 .page_box .items .img_box {
   display: flex;
   height: 250px;
+}
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .page_box {
+    flex-direction: column;
+    width: 100vw;
+    margin: 3.4722vw auto;
+  }
+  .page_box .filter_box {
+    margin-right: 2.4306vw;
+  }
+  .page_box .filter_box select {
+    padding: 0.3472vw;
+    font-size: 1vw;
+    border: 0.1389vw solid rgba(8, 196, 165);
+  }
+
+  .page_box .items .img_box {
+    height: 15vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .page_box {
+    padding: 4vw 4vw;
+    width: auto;
+  }
+  .page_box .item_box {
+    display: flex;
+    flex-direction: column;
+  }
+  .page_box .filter_box {
+    margin-right: 4.7vw;
+  }
+  .page_box .filter_box select {
+    padding: 0.3472vw;
+    font-size: 2.5vw;
+    border: 0.1389vw solid rgba(8, 196, 165);
+  }
+  .page_box .items .img_box {
+    height: auto;
+  }
 }

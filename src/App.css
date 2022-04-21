@@ -32,3 +32,34 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  button {
+    background-color: rgb(8, 141, 119);
+    border: none;
+    padding: 0.5556vw 1.0417vw;
+    border-radius: 0.3472vw;
+    cursor: pointer;
+    font-size: 0.9722vw;
+  }
+
+  button:hover {
+    box-shadow: 0.1389vw 0.2083vw 0.6944vw rgba(8, 196, 165, 0.575);
+    transition: 0.1s;
+  }
+}
+@media screen and (max-width: 768px) {
+  button {
+    background-color: rgb(8, 141, 119);
+    border: none;
+    padding: 1.0417vw 1.9531vw;
+    border-radius: 0.651vw;
+    cursor: pointer;
+    font-size: 1.8229vw;
+  }
+
+  button:hover {
+    box-shadow: 0.2604vw 0.3906vw 1.3021vw rgba(8, 196, 165, 0.575);
+    transition: 0.1s;
+  }
+}

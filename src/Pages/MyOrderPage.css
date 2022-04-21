@@ -22,13 +22,16 @@
   display: flex;
   justify-content: space-around;
 }
-
+.myorder_page .order_item .txt_box p {
+  font-size: 16px;
+}
 .myorder_page .order_detail {
   display: flex;
   margin: 20px auto;
   background-color: rgba(8, 196, 165, 0.096);
 }
 .myorder_page .order_detail .item_info {
+  font-size: 16px;
   flex: 2;
 }
 .myorder_page .order_detail .item_info .title_box {
@@ -84,10 +87,100 @@
   font-size: 18px;
   font-weight: 700;
 }
-/* <div className="order_info">
-              <div className="txt_box">
-                <p>Order Name : {order.orderInfo.orderBy}</p>
-                <p>Order to : {order.orderInfo.address}</p>
-                <p>Contact : {order.orderInfo.contact}</p>
-                {order.orderInfo.msg && <p>Message : {order.orderInfo.msg}</p>}
-              </div> */
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .myorder_page {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .myorder_page h2 {
+    margin: 2.0833vw 0;
+  }
+  .myorder_page .order_item {
+    align-items: center;
+    height: 6.9444vw;
+
+    margin: 1.3889vw 0;
+  }
+
+  .myorder_page .order_item .txt_box {
+    padding: 0 2.7778vw;
+  }
+  .myorder_page .order_item .txt_box p {
+    font-size: 1.1vw;
+  }
+  .myorder_page .order_detail {
+    margin: 1.3889vw auto;
+    background-color: rgba(8, 196, 165, 0.096);
+  }
+  .myorder_page .order_detail .item_info {
+    font-size: 1.1vw;
+  }
+  .myorder_page .order_detail .item_info .title_box {
+    background-color: rgba(8, 196, 165, 0.342);
+    height: 2.7778vw;
+    align-items: center;
+  }
+
+  .myorder_page .order_detail .order_info {
+    flex-direction: column;
+    padding: 0 2.0833vw;
+  }
+
+  .myorder_page .order_detail .order_info .txt_box p {
+    font-size: 1.1111vw;
+    line-height: 1.6667vw;
+  }
+  .myorder_page .order_detail .order_info .total_box {
+    font-size: 1.25vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .myorder_page {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .myorder_page h2 {
+    font-size: 3vw;
+    margin: 8vw 0;
+  }
+  .myorder_page .order_item {
+    align-items: center;
+    height: 13.0208vw;
+    margin: 2.6042vw 0;
+  }
+
+  .myorder_page .order_item .txt_box {
+    padding: 0 2vw;
+  }
+  .myorder_page .order_item .txt_box p {
+    font-size: 2.0833vw;
+  }
+  .myorder_page .order_detail {
+    display: flex;
+    flex-direction: column;
+    margin: 2.6042vw auto;
+    background-color: rgba(8, 196, 165, 0.096);
+  }
+  .myorder_page .order_detail .item_info {
+    font-size: 2.0833vw;
+  }
+  .myorder_page .order_detail .item_info .title_box {
+    background-color: rgba(8, 196, 165, 0.342);
+    height: 5.2083vw;
+    align-items: center;
+  }
+
+  .myorder_page .order_detail .order_info {
+    flex-direction: column;
+    padding: 4vw;
+  }
+
+  .myorder_page .order_detail .order_info .txt_box p {
+    font-size: 2.0833vw;
+    line-height: 3.125vw;
+  }
+  .myorder_page .order_detail .order_info .total_box {
+    font-size: 2.3438vw;
+    margin: 3vw 0 1vw;
+  }
+}

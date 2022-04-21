@@ -44,79 +44,82 @@ const OrderPage = () => {
 
   return (
     <div className="order_page">
-      <div className="order_info">
-        <div className="item_title">
-          <h3>Item</h3>
-          <div className="txt_box">
-            <p></p>
-            <p>Price</p>
-            <p>Qty</p>
-            <p>Total</p>
-          </div>
-        </div>
-        <div className="item_box">
-          {cartInfo.items.map((item) => (
-            <div className="item_detail">
-              <div className="img_box">
-                <img src={item.img} alt="" />
-              </div>
-              <div className="txt_box">
-                <p>{item.name}</p>
-                <p>$ {item.price}</p>
-                <p>{item.qty}</p>
-                <p>$ {item.price * item.qty}</p>
-              </div>
+      <h2>Thank you for shopping!</h2>
+      <div className="order_box">
+        <div className="order_info">
+          <div className="item_title">
+            <h3>Item</h3>
+            <div className="txt_box">
+              <p></p>
+              <p>Price</p>
+              <p>Qty</p>
+              <p>Total</p>
             </div>
-          ))}
+          </div>
+          <div className="item_box">
+            {cartInfo.items.map((item) => (
+              <div className="item_detail">
+                <div className="img_box">
+                  <img src={item.img} alt="" />
+                </div>
+                <div className="txt_box">
+                  <p>{item.name}</p>
+                  <p>$ {item.price}</p>
+                  <p>{item.qty}</p>
+                  <p>$ {item.price * item.qty}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="order_form">
-        <form onSubmit={sendData}>
-          <div className="input_box">
-            <p>Name</p>
-            <input
-              type="text"
-              placeholder="name"
-              onChange={getInfo}
-              name="orderBy"
-              required
-            />
-          </div>
-          <div className="input_box">
-            <p>Address</p>
-            <input
-              type="text"
-              placeholder="address"
-              onChange={getInfo}
-              name="address"
-              required
-            />
-          </div>
-          <div className="input_box">
-            <p>Contact</p>
-            <input
-              type="number"
-              placeholder="contact"
-              onChange={getInfo}
-              name="contact"
-              required
-            />
-          </div>
-          <div className="input_box">
-            <p>Leave a message</p>
-            <input
-              type="text"
-              onChange={getInfo}
-              name="msg"
-              placeholder="leave a message"
-            />
-          </div>
-          <div className="total_box">
-            <p>SubTotal</p>
-            <p>${cartInfo.total}</p>
-          </div>
-          <button>Place order</button>
-        </form>
+        <div className="order_form">
+          <form onSubmit={sendData}>
+            <div className="input_box">
+              <p>Name</p>
+              <input
+                type="text"
+                placeholder="name"
+                onChange={getInfo}
+                name="orderBy"
+                required
+              />
+            </div>
+            <div className="input_box">
+              <p>Address</p>
+              <input
+                type="text"
+                placeholder="address"
+                onChange={getInfo}
+                name="address"
+                required
+              />
+            </div>
+            <div className="input_box">
+              <p>Contact</p>
+              <input
+                type="number"
+                placeholder="contact"
+                onChange={getInfo}
+                name="contact"
+                required
+              />
+            </div>
+            <div className="input_box">
+              <p>Leave a message</p>
+              <input
+                type="text"
+                onChange={getInfo}
+                name="msg"
+                placeholder="leave a message"
+              />
+            </div>
+            <div className="total_box">
+              <p>SubTotal</p>
+              <p>${cartInfo.total}</p>
+            </div>
+            <button>Place order</button>
+          </form>
+        </div>
       </div>
     </div>
   );

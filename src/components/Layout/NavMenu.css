@@ -1,15 +1,53 @@
-.nav_menu {
-}
 .nav_menu .inactive,
 .nav_menu .active {
   padding: 5px 10px;
   margin: 0 25px;
   text-align: center;
   color: rgb(0, 0, 0);
+  font-size: 16px;
 }
 
 .nav_menu .active {
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   background-color: rgba(8, 196, 165);
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .nav_menu .inactive,
+  .nav_menu .active {
+    padding: 0.3472vw 0.6944vw;
+    margin: 0 1.7361vw;
+    font-size: 1.11vw;
+    color: rgb(0, 0, 0);
+  }
+
+  .nav_menu .active {
+    color: #fff;
+    background-color: rgba(8, 196, 165);
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav_menu {
+    position: absolute;
+    top: 15vw;
+    width: 89%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(8, 196, 165, 0.363);
+    color: #fff;
+    z-index: 9999999999;
+  }
+
+  .nav_menu .inactive,
+  .nav_menu .active {
+    padding: 0;
+    margin: 0;
+    padding: 0.3vw 2vw;
+    font-size: 2.4vw;
+  }
+  .nav_menu .active {
+    color: #fff;
+    background-color: rgba(8, 196, 165);
+  }
 }

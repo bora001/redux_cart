@@ -39,3 +39,33 @@
 .cart_item .item_info .btn_box button {
   padding: 5px 10px;
 }
+@media screen and (max-width: 768px) {
+  .cart_item {
+    width: 58.5938vw;
+    align-items: center;
+    margin-bottom: 1.9531vw;
+  }
+
+  .cart_item .item_info {
+    flex: 1.5;
+    flex-direction: column;
+    padding: 1.3021vw;
+  }
+
+  .cart_item .item_info h4 {
+    font-size: 2.6042vw;
+    line-height: 4.9479vw;
+  }
+  .cart_item .item_info .txt_box {
+    align-items: center;
+    margin-bottom: 1.3021vw;
+  }
+
+  .cart_item .item_info .txt_box p {
+    font-size: 2.0833vw;
+  }
+
+  .cart_item .item_info .btn_box button {
+    padding: 0.651vw 1.3021vw;
+  }
+}

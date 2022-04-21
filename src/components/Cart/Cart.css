@@ -24,3 +24,30 @@
 .cart_box .btn_box button {
   margin: 5px;
 }
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+}
+@media screen and (max-width: 768px) {
+  .cart_box {
+    flex-direction: column;
+    align-items: center;
+    padding: 3.9063vw;
+    border-radius: 1.3021vw;
+    background-color: rgb(235, 247, 244);
+  }
+  .cart_box .txt_empty {
+    font-size: 2.0833vw;
+    margin: 3.9063vw;
+  }
+  .cart_box h3 {
+    font-size: 3.6458vw;
+    margin-bottom: 1.9531vw;
+  }
+  .cart_box .total_box {
+    width: 100%;
+    font-size: 2.3438vw;
+    margin: 2.6042vw 0;
+  }
+  .cart_box .btn_box button {
+    margin: 0.651vw;
+  }
+}

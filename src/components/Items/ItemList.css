@@ -22,3 +22,42 @@
 .swiper-button-prev {
   transform: rotate(180deg);
 }
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .items_list {
+    margin: 0 auto;
+    padding: 3.4722vw;
+    width: 80%;
+  }
+  .swiper {
+    margin-top: 6.9444vw;
+    width: 95%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 3.4722vw !important;
+    height: 3.4722vw !important;
+    background: url(https://cdn.pixabay.com/photo/2021/10/09/12/45/play-button-6694069_960_720.png)
+      no-repeat contain;
+  }
+
+  .swiper-button-prev {
+    transform: rotate(180deg);
+  }
+}
+@media screen and (max-width: 768px) {
+  .items_list {
+    width: auto;
+  }
+  .swiper {
+    width: auto;
+    margin-top: 0vw;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 6.5104vw !important;
+    height: 6.5104vw !important;
+    background: url(https://cdn.pixabay.com/photo/2021/10/09/12/45/play-button-6694069_960_720.png)
+      no-repeat contain;
+  }
+}

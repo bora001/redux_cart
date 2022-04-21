@@ -3,7 +3,6 @@
 }
 .items .txt_box {
   display: flex;
-  padding: 0 15px;
   justify-content: space-between;
 }
 
@@ -16,4 +15,38 @@
 }
 .items .txt_box .btn_add {
   margin-top: 20px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .items {
+    padding: 2.4306vw;
+  }
+
+  .items .txt_box h3 {
+    font-size: 1.5vw;
+    line-height: 3.3333vw;
+  }
+  .items .txt_box p {
+    font-size: 1.25vw;
+  }
+  .items .txt_box .btn_add {
+    margin-top: 1.3889vw;
+    padding: 0.5556vw 0.9vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .items {
+    padding: 4.5573vw;
+  }
+
+  .items .txt_box h3 {
+    font-size: 3.3854vw;
+    line-height: 6.25vw;
+  }
+  .items .txt_box p {
+    font-size: 2.3438vw;
+  }
+  .items .txt_box .btn_add {
+    margin-top: 2.6042vw;
+  }
 }

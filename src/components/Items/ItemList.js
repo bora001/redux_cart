@@ -10,8 +10,10 @@ import "swiper/css/navigation";
 import axios from "axios";
 const ItemList = (props) => {
   const [itemData, setItemData] = useState([]);
+  const [mobile, setMobile] = useState(false);
   const swiperRef = React.useRef(null);
   useEffect(() => {
+    window.innerWidth < 769 ? setMobile(true) : setMobile(false);
     axios
       .get(firebaseKey.firebaseUrl + `Item/best.json`)
       .then((data) => setItemData(Object.values(data.data)));
@@ -26,11 +28,15 @@ const ItemList = (props) => {
     // });
   }, []);
 
+  window.addEventListener("resize", () => {
+    window.innerWidth < 769 ? setMobile(true) : setMobile(false);
+  });
+
   return (
     <div className="items_list">
       <Swiper
         ref={swiperRef}
-        slidesPerView={3}
+        slidesPerView={mobile ? 1 : 3}
         loop={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"

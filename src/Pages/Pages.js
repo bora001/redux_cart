@@ -28,7 +28,7 @@ const Pages = (props) => {
 
   const sortPrice = (e) => {
     let sort = productList.sort((a, b) =>
-      e.target.value == "low" ? a.price - b.price : b.price - a.price
+      e.target.value === "low" ? a.price - b.price : b.price - a.price
     );
     setProductList((prevList) => [...sort]);
   };
@@ -45,7 +45,7 @@ const Pages = (props) => {
       <div className="item_box">
         {productList &&
           productList.map((item) => (
-            <div className="items">
+            <div className="items" key={item.name}>
               <div className="img_box">
                 <img src={item.img} alt={item.name} />
               </div>

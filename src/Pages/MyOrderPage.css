@@ -1,0 +1,93 @@
+.myorder_page {
+  width: 70%;
+  margin: 0 auto;
+}
+.myorder_page h2 {
+  margin: 30px 0;
+}
+.myorder_page .order_item {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.myorder_page .order_item .img_box {
+  flex: 1;
+}
+
+.myorder_page .order_item .txt_box {
+  flex: 2;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.myorder_page .order_detail {
+  display: flex;
+  margin: 20px auto;
+  background-color: rgba(8, 196, 165, 0.096);
+}
+.myorder_page .order_detail .item_info {
+  flex: 2;
+}
+.myorder_page .order_detail .item_info .title_box {
+  background-color: rgba(8, 196, 165, 0.342);
+  height: 40px;
+  align-items: center;
+  display: flex;
+}
+.myorder_page .order_detail .item_info .title_box p:first-child {
+  flex: 3;
+}
+.myorder_page .order_detail .item_info .title_box p {
+  flex: 1;
+  text-align: center;
+}
+.myorder_page .order_detail .item_info .item_box .item_name {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+.myorder_page .order_detail .item_info .item_box .item_name .img_box {
+  flex: 1;
+}
+.myorder_page .order_detail .item_info .item_box .item_name h4 {
+  text-align: center;
+  flex: 1;
+}
+
+.myorder_page .order_detail .item_info .item_box {
+  display: flex;
+  align-items: center;
+}
+.myorder_page .order_detail .item_info .item_box p {
+  text-align: center;
+  flex: 1;
+}
+
+.myorder_page .order_detail .order_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+  padding: 0 30px;
+}
+
+.myorder_page .order_detail .order_info .txt_box p {
+  font-size: 16px;
+  line-height: 24px;
+}
+.myorder_page .order_detail .order_info .total_box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+}
+/* <div className="order_info">
+              <div className="txt_box">
+                <p>Order Name : {order.orderInfo.orderBy}</p>
+                <p>Order to : {order.orderInfo.address}</p>
+                <p>Contact : {order.orderInfo.contact}</p>
+                {order.orderInfo.msg && <p>Message : {order.orderInfo.msg}</p>}
+              </div> */

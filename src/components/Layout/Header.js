@@ -6,6 +6,7 @@ import { cartAction } from "../Store/cart-slice";
 import { getDatabase, ref, set, child, get } from "firebase/database";
 import { getAuth, signOut } from "firebase/auth";
 import NavMenu from "./NavMenu";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,6 @@ const Header = () => {
     get(child(dbRef, `Cart/${userUid}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
           dispatch(cartAction.setCart(snapshot.val()));
         } else {
           console.log("No data available");
@@ -28,7 +28,7 @@ const Header = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, [isLogin]);
+  }, [isLogin, userUid, dispatch]);
 
   useEffect(() => {
     setSpanStyle("");
@@ -41,9 +41,8 @@ const Header = () => {
 
   useEffect(() => {
     const db = getDatabase();
-    console.log(cartInfo);
     set(ref(db, "Cart/" + cartInfo.userUid), cartInfo);
-  }, [cartInfo.items]);
+  }, [cartInfo, cartInfo.items]);
 
   const goLogin = () => {
     dispatch(userAction.login());
@@ -63,22 +62,26 @@ const Header = () => {
 
   return (
     <div className="header">
-      <h1>
-        <a href="/">ReduxCart</a>
-      </h1>
+      <Link to="/">
+        <h1>ReduxCart</h1>
+      </Link>
       <NavMenu />
       {isLogin && (
         <div className="btn_box">
-          <button>My Order</button>
+          <Link to="/myorder">
+            <button>My Order</button>
+          </Link>
           <button className="btn_cart" onClick={goCart}>
             <p>My Cart</p>
             <span className={spanStyle}>
               {cartInfo && cartInfo.items.length}
             </span>
           </button>
-          <button className="btn_logout" onClick={logout}>
-            Logout
-          </button>
+          <Link to="/">
+            <button className="btn_logout" onClick={logout}>
+              Logout
+            </button>
+          </Link>
         </div>
       )}
       {!isLogin && (

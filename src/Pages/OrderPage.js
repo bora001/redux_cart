@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import "./OrderPage.css";
-import axios from "axios";
-import { firebaseKey } from "../dev";
-import { getDatabase, ref, set, child, get } from "firebase/database";
+// import axios from "axios";
+import { getDatabase, ref, push } from "firebase/database";
 import { cartAction } from "../components/Store/cart-slice";
 const OrderPage = () => {
   const navigate = useNavigate();
@@ -28,13 +27,19 @@ const OrderPage = () => {
 
   const sendData = (e) => {
     e.preventDefault();
-    let data = { orderInfo, cartInfo };
     let n = Math.random().toString(36).slice(2);
     let id = n + n;
+
     const db = getDatabase();
-    set(ref(db, "Order/" + id), data);
+    push(ref(db, "Order/" + cartInfo.userUid), {
+      id,
+      orderInfo,
+      cartInfo,
+    });
+    // .then((data) => console.log(data._path.pieces_[2]));
+
     dispatch(cartAction.setCart([]));
-    navigate("/complete_order", { state: id });
+    navigate("/myorder");
   };
 
   return (

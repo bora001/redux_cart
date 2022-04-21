@@ -9,7 +9,7 @@ import "./App.css";
 import { userAction } from "./components/Store/user-slice";
 import Pages from "./Pages/Pages";
 import OrderPage from "./Pages/OrderPage";
-import CompletePage from "./Pages/CompletePage";
+import MyOrderPage from "./Pages/MyOrderPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function App() {
         <Route path="/" element={<ItemList />} exact />
         <Route path="/product/:item" element={<Pages />} exact />
         <Route path="/order" element={<OrderPage />} exact />
-        <Route path="/complete_order" element={<CompletePage />} exact />
+        <Route path="/myorder" element={<MyOrderPage />} exact />
         <Route></Route>
       </Routes>
     </BrowserRouter>

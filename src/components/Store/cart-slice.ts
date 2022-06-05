@@ -1,6 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
+export type cartItemType = {
+  img: string;
+  name: string;
+  price: number;
+  qty: number;
+};
 
-const initialState = {
+export type cartSliceType = {
+  userUid: string | null;
+  items: cartItemType[];
+  total: number;
+};
+
+const initialState: cartSliceType = {
   userUid: null,
   items: [],
   total: 0,
@@ -14,7 +26,7 @@ const cartSlice = createSlice({
       const cartItem = action.payload;
       const cartTotal = state.total + action.payload.price;
       const sameItem = state.items.filter(
-        (item) => item.name === action.payload.name
+        (item: cartItemType) => item.name === action.payload.name
       );
       if (sameItem.length > 0) {
         state.items = state.items.map((item) =>

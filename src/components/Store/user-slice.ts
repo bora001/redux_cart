@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = { isLogin: false, status: null };
+export type userSliceType = {
+  isLogin: boolean;
+  status: string | null;
+};
+const initialState: userSliceType = { isLogin: false, status: null };
 const userSlice = createSlice({
   name: "user",
   initialState,

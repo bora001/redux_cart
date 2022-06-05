@@ -10,12 +10,14 @@ import { userAction } from "./components/Store/user-slice";
 import Pages from "./Pages/Pages";
 import OrderPage from "./Pages/OrderPage";
 import MyOrderPage from "./Pages/MyOrderPage";
+import { useAppDispatch, useAppSelector } from "./components/Store/hooks";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const modalClose = () => dispatch(userAction.modalClose());
-  const status = useSelector((state) => state.user.status);
-
+  const status = useAppSelector((state) => state.user.status);
+  const item = useAppSelector((state) => state.cart.items);
+  console.log(item);
   return (
     <BrowserRouter>
       {status === "Login" && <LoginForm modalClose={modalClose} />}
@@ -23,11 +25,10 @@ function App() {
       {status === "Cart" && <Cart modalClose={modalClose} />}
       <Header />
       <Routes>
-        <Route path="/" element={<ItemList />} exact />
-        <Route path="/product/:item" element={<Pages />} exact />
-        <Route path="/order" element={<OrderPage />} exact />
-        <Route path="/myorder" element={<MyOrderPage />} exact />
-        <Route></Route>
+        <Route path="/" element={<ItemList />} />
+        <Route path="/product/:item" element={<Pages />} />
+        <Route path="/order" element={<OrderPage />} />
+        <Route path="/myorder" element={<MyOrderPage />} />
       </Routes>
     </BrowserRouter>
   );

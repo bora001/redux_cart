@@ -1,6 +1,6 @@
-import React from "react";
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavMenu.css";
+
 const navMenu = () => {
   return (
     <div className="nav_menu">

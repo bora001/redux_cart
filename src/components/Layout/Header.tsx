@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import "./Header.css";
+import NavMenu from "./NavMenu";
+import { useAppSelector, useAppDispatch } from "../Store/hooks";
 import { userAction } from "../Store/user-slice";
 import { cartAction } from "../Store/cart-slice";
+import { Link } from "react-router-dom";
 import { getDatabase, ref, set, child, get } from "firebase/database";
 import { getAuth, signOut } from "firebase/auth";
-import NavMenu from "./NavMenu";
-import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [spanStyle, setSpanStyle] = useState("");
-  const isLogin = useSelector((state) => state.user.isLogin);
-  const cartInfo = useSelector((state) => state.cart);
-  const userUid = useSelector((state) => state.cart.userUid);
+  const isLogin = useAppSelector((state) => state.user.isLogin);
+  const cartInfo = useAppSelector((state) => state.cart);
+  const userUid = useAppSelector((state) => state.cart.userUid);
   const auth = getAuth();
   useEffect(() => {
     const dbRef = ref(getDatabase());

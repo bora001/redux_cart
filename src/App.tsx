@@ -1,16 +1,15 @@
 import Header from "./components/Layout/Header";
 import ItemList from "./components/Items/ItemList";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import LoginForm from "./components/UI/LoginForm";
 import RegisterForm from "./components/UI/RegisterForm";
 import Cart from "./components/Cart/Cart";
-import "./App.css";
-import { userAction } from "./components/Store/user-slice";
 import Pages from "./Pages/Pages";
 import OrderPage from "./Pages/OrderPage";
 import MyOrderPage from "./Pages/MyOrderPage";
 import { useAppDispatch, useAppSelector } from "./components/Store/hooks";
+import { userAction } from "./components/Store/user-slice";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   const dispatch = useAppDispatch();

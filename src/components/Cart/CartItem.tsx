@@ -1,11 +1,10 @@
-import React from "react";
-import "./CartItem.css";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../Store/hooks";
 import { cartAction } from "../Store/cart-slice";
+import { cartItemType } from "../Store/cart-slice";
+import "./CartItem.css";
 
-const CartItem = (props) => {
-  console.log(props.items);
-  const dispatch = useDispatch();
+const CartItem = (props: { item: cartItemType }) => {
+  const dispatch = useAppDispatch();
   const plusItem = () => {
     dispatch(cartAction.addCart(props.item));
   };

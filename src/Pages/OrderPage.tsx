@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../components/Store/hooks";
 import { useNavigate } from "react-router";
-import "./OrderPage.css";
-// import axios from "axios";
 import { getDatabase, ref, push } from "firebase/database";
 import { cartAction } from "../components/Store/cart-slice";
+import "./OrderPage.css";
+
 const OrderPage = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const cartInfo = useSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
+  const cartInfo = useAppSelector((state) => state.cart);
   const [orderInfo, setOrderInfo] = useState({
     orderBy: "",
     address: "",
@@ -16,8 +16,9 @@ const OrderPage = () => {
     msg: "",
     date: "",
   });
-  const getInfo = (e) => {
-    const { value, name } = e.target;
+  const getInfo = (e: React.ChangeEvent) => {
+    const target = e.target as HTMLInputElement;
+    const { value, name } = target;
     setOrderInfo({
       ...orderInfo,
       [name]: value,
@@ -25,7 +26,7 @@ const OrderPage = () => {
     });
   };
 
-  const sendData = (e) => {
+  const sendData = (e: React.FormEvent) => {
     e.preventDefault();
     let n = Math.random().toString(36).slice(2);
     let id = n + n;
@@ -36,8 +37,6 @@ const OrderPage = () => {
       orderInfo,
       cartInfo,
     });
-    // .then((data) => console.log(data._path.pieces_[2]));
-
     dispatch(cartAction.setCart([]));
     navigate("/myorder");
   };

@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { firebaseKey } from "../../dev";
 import Items from "./Items";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
+import { cartItemType } from "../Store/cart-slice";
+import SwiperCore from "swiper";
+import axios from "axios";
 import "./ItemList.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import axios from "axios";
-const ItemList = (props) => {
-  const [itemData, setItemData] = useState([]);
+
+const ItemList = () => {
+  const [itemData, setItemData] = useState<cartItemType[]>([]);
   const [mobile, setMobile] = useState(false);
-  const swiperRef = React.useRef(null);
+  const swiperRef = useRef() as any;
   useEffect(() => {
     window.innerWidth < 769 ? setMobile(true) : setMobile(false);
     axios
@@ -27,15 +30,15 @@ const ItemList = (props) => {
     //   console.log(err);
     // });
   }, []);
-
   window.addEventListener("resize", () => {
     window.innerWidth < 769 ? setMobile(true) : setMobile(false);
   });
-
   return (
     <div className="items_list">
       <Swiper
-        ref={swiperRef}
+        onInit={(core: SwiperCore) => {
+          swiperRef.current = core.el;
+        }}
         slidesPerView={mobile ? 1 : 3}
         loop={true}
         modules={[Pagination, Navigation]}

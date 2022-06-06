@@ -1,14 +1,14 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { cartAction } from "../Store/cart-slice";
+import { useAppDispatch, useAppSelector } from "../Store/hooks";
 import { userAction } from "../Store/user-slice";
+import { cartItemType, cartAction } from "../Store/cart-slice";
 import "./Items.css";
 
-const Items = (props) => {
-  const dispatch = useDispatch();
-  const isLogin = useSelector((state) => state.user.isLogin);
+const Items = (props: { data: cartItemType }) => {
+  const dispatch = useAppDispatch();
+  const isLogin = useAppSelector((state) => state.user.isLogin);
 
-  const addCart = (props) => {
+  const addCart = (props: cartItemType) => {
     isLogin
       ? dispatch(cartAction.addCart(props))
       : dispatch(userAction.login());

@@ -2,22 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { firebaseKey } from "../dev";
-import "./Pages.css";
-import { useDispatch, useSelector } from "react-redux";
-import { cartAction } from "../components/Store/cart-slice";
+import { cartItemType, cartAction } from "../components/Store/cart-slice";
 import { userAction } from "../components/Store/user-slice";
+import { useAppDispatch, useAppSelector } from "../components/Store/hooks";
+import "./Pages.css";
 
-const Pages = (props) => {
-  const [productList, setProductList] = useState([]);
-  let params = useParams();
+const Pages = () => {
+  const [productList, setProductList] = useState<cartItemType[]>([]);
+  const params = useParams();
+  const dispatch = useAppDispatch();
+  const isLogin = useAppSelector((state) => state.user.isLogin);
 
-  const dispatch = useDispatch();
-  const isLogin = useSelector((state) => state.user.isLogin);
-
-  const addCart = (props) => {
-    isLogin
-      ? dispatch(cartAction.addCart(props))
-      : dispatch(userAction.login());
+  const addCart = (item: cartItemType) => {
+    isLogin ? dispatch(cartAction.addCart(item)) : dispatch(userAction.login());
   };
 
   useEffect(() => {
@@ -26,9 +23,10 @@ const Pages = (props) => {
       .then((data) => setProductList(Object.values(data.data)));
   }, [params.item]);
 
-  const sortPrice = (e) => {
+  const sortPrice = (e: React.ChangeEvent) => {
+    const target = e.target as HTMLSelectElement;
     let sort = productList.sort((a, b) =>
-      e.target.value === "low" ? a.price - b.price : b.price - a.price
+      target.value === "low" ? a.price - b.price : b.price - a.price
     );
     setProductList((prevList) => [...sort]);
   };

@@ -57,8 +57,8 @@ const OrderPage = () => {
             </div>
           </div>
           <div className="item_box">
-            {cartInfo.items.map((item) => (
-              <div className="item_detail">
+            {cartInfo.items.map((item, i) => (
+              <div className="item_detail" key={i}>
                 <div className="img_box">
                   <img src={item.img} alt="" />
                 </div>

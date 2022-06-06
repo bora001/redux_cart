@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import { useAppSelector } from "../Store/hooks";
 import Modal from "../UI/Modal";
-import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import "./Cart.css";
 import { Link } from "react-router-dom";
+import "./Cart.css";
 
-const Cart = (props) => {
-  const state = useSelector((state) => state.cart);
+const Cart = (props: { modalClose: () => void }) => {
+  const state = useAppSelector((state) => state.cart);
 
   return (
     <Modal>

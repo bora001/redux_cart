@@ -4,21 +4,29 @@ import { useNavigate } from "react-router";
 import { getDatabase, ref, push } from "firebase/database";
 import { cartAction } from "../components/Store/cart-slice";
 import "./OrderPage.css";
+export type orderInfoType = {
+  orderBy: string;
+  address: string;
+  contact: number;
+  msg: string;
+  date: string;
+};
 
 const OrderPage = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const cartInfo = useAppSelector((state) => state.cart);
-  const [orderInfo, setOrderInfo] = useState({
+  const [orderInfo, setOrderInfo] = useState<orderInfoType>({
     orderBy: "",
     address: "",
-    contact: "",
+    contact: 0,
     msg: "",
     date: "",
   });
   const getInfo = (e: React.ChangeEvent) => {
     const target = e.target as HTMLInputElement;
     const { value, name } = target;
+
     setOrderInfo({
       ...orderInfo,
       [name]: value,

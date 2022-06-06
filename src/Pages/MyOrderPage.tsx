@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../components/Store/hooks";
 import { getDatabase, ref, child, get } from "firebase/database";
+import { cartSliceType } from "../components/Store/cart-slice";
+import { orderInfoType } from "./OrderPage";
 import "./MyOrderPage.css";
+
+type orderListType = {
+  cartInfo: cartSliceType;
+  id: string;
+  orderInfo: orderInfoType;
+};
+
 const MyOrderPage = () => {
-  const [orderList, setOrderList] = useState([]);
-  const cartInfo = useSelector((state) => state.cart);
+  const [orderList, setOrderList] = useState<orderListType[]>([]);
   const [orderView, setOrderView] = useState("");
+  const cartInfo = useAppSelector((state) => state.cart);
 
   useEffect(() => {
     const dbRef = ref(getDatabase());
@@ -22,7 +31,7 @@ const MyOrderPage = () => {
       });
   }, [cartInfo.userUid]);
 
-  const viewInfo = (id) => {
+  const viewInfo = (id: string) => {
     orderView === id ? setOrderView("") : setOrderView(id);
   };
 
@@ -55,7 +64,7 @@ const MyOrderPage = () => {
             </div>
           </div>
           {orderView === order.id && (
-            <div className="order_detail" value={order.id}>
+            <div className="order_detail">
               <div className="item_info">
                 <div className="title_box">
                   <p>Item</p>
